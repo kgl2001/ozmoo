@@ -76,6 +76,7 @@ REM configuration on a Master to make this assumption valid.
 VDU 23,16,0,254,0;0;0;
 
 DIM block% 256
+IF FNpeek(&8B)>8 PROCpoke(&8B,0)
 host_os=FNusr_osbyte_x(0,1,0)
 REM If we're on an Integra-B in OSMODE 0, it's as if we're on a standard model B.
 REM We need to avoid detecting the private RAM, because the non-shadow-RAM model B
